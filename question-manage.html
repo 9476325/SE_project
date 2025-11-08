@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin | Manage Questions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 30px;
+      width: 650px;
+      text-align: left;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+      margin: auto;
+    }
+
+    .card h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1.8em;
+    }
+
+    h3 {
+      margin: 20px 0 10px;
+      font-size: 1.2em;
+      color: #ffe8f2;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      font-size: 1em;
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      background: #ff7eb3;
+      color: white;
+      transition: background 0.3s;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      background: #ff4f81;
+    }
+
+    .output {
+      margin-top: 20px;
+      text-align: left;
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .output h3 {
+      margin-top: 0;
+    }
+
+    .message {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 6px;
+      background: rgba(0, 255, 0, 0.3);
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      background: rgba(0,0,0,0.25);
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>ExamSphere portal - Manage Questions</header>
+
+  <div class="card">
+    <h2>Question Management</h2>
+
+    <!-- Add Question -->
+    <h3>Add MCQ Question</h3>
+    <div class="form-group">
+      <label for="addTopic">Choose Topic</label>
+      <select id="addTopic">
+        <option value="">--Select Topic--</option>
+        <option value="EVS">EVS</option>
+        <option value="TOC">TOC</option>
+        <option value="OOP">OOP</option>
+        <option value="CO">Computer Organization</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="addQuestion">Enter Question</label>
+      <input type="text" id="addQuestion" placeholder="Type question here...">
+    </div>
+    <div class="form-group">
+      <label>Options</label>
+      <input type="text" id="optionA" placeholder="Option A">
+      <input type="text" id="optionB" placeholder="Option B">
+      <input type="text" id="optionC" placeholder="Option C">
+      <input type="text" id="optionD" placeholder="Option D">
+    </div>
+    <div class="form-group">
+      <label for="correctAnswer">Correct Answer</label>
+      <select id="correctAnswer">
+        <option value="">--Select Correct Option--</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+      </select>
+    </div>
+    <button onclick="addQuestion()">Add Question</button>
+
+    <!-- Remove Question -->
+    <h3>Remove Question</h3>
+    <div class="form-group">
+      <label for="removeTopic">Choose Topic</label>
+      <select id="removeTopic">
+        <option value="">--Select Topic--</option>
+        <option value="EVS">EVS</option>
+        <option value="TOC">TOC</option>
+        <option value="OOP">OOP</option>
+        <option value="CO">Computer Organization</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="removeNumber">Enter Question Number</label>
+      <input type="number" id="removeNumber" placeholder="e.g. 1">
+    </div>
+    <button onclick="removeQuestion()">Remove Question</button>
+
+    <!-- See Questions -->
+    <h3>See Questions</h3>
+    <div class="form-group">
+      <label for="seeTopic">Choose Topic</label>
+      <select id="seeTopic">
+        <option value="">--Select Topic-

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard | Online Exam Portal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #7F00FF, #E100FF);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 2.2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 40px 30px;
+      width: 400px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px);
+      /* animation: float 3s ease-in-out infinite; */
+      margin: auto;
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      font-size: 1.6em;
+    }
+
+    .details {
+      text-align: left;
+      margin-bottom: 25px;
+      font-size: 1em;
+    }
+
+    .details p {
+      margin: 8px 0;
+    }
+
+    .exam-section {
+      margin: 20px 0;
+    }
+
+    .exam-section button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      background: #ff7eb3;
+      color: white;
+      transition: background 0.3s;
+    }
+
+    .exam-section button:hover {
+      background: #ff4f81;
+    }
+
+    .exam-list {
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    .exam-item {
+      background: rgba(255,255,255,0.15);
+      padding: 10px;
+      border-radius: 8px;
+      margin: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .change-pass {
+      margin-top: 25px;
+      text-align: center;
+    }
+    .edit-profile{
+        font-size: 1em;
+        font-weight: bold;
+        padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      background: #ffe57f;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+
+    }
+    .change-pass button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      background: #ffe57f;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .change-pass button:hover {
+      background: #ffd54f;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      background: rgba(0,0,0,0.2);
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Student Dashboard</header>
+
+  <div class="card">
+    <h2>Welcome, Student</h2>
+    <div class="details">
+      <p><strong>Name:</strong> Rahidul Sekh</p>
+      <p><strong>Roll No:</strong> CSE2023007</p>
+      <p><strong>Email:</strong> rahidul@example.com</p>
+    </div>
+
+    <div class="exam-section">
+      <button onclick="location.href='exam.html'">Exam</button>
+    </div>
+
+    <h3>Given Exams</h3>
+    <div class="exam-list">
+      <div class="exam-item">
+        <span>Math Test</span>
+        <span>85%</span>
+      </div>
+      <div class="exam-item">
+        <span>Physics Test</span>
+        <span>78%</span>
+      </div>
+      <div class="exam-item">
+        <span>C Programming</span>
+        <span>92%</span>
+      </div>
+    </div>
+    <div 
+  <button 
+    style="padding:12px 25px;
+           font-size:16px;
+           font-family:Poppins, sans-serif;
+           font-weight:600;
+           color:#fff;
+           background:linear-gradient(135deg,#6a11cb,#2575fc);
+           border:none;
+           border-radius:10px;
+           cursor:pointer;
+           box-shadow:0 4px 10px rgba(0,0,0,0.2);
+           transition:all 0.3s ease;"
+    onmouseover="this.style.transform='scale(1.1)'"
+    onmouseout="this.style.transform='scale(1)'">
+    ✏️ Edit Profile
+  </button>
+    </div>
+
+    <div class="change-pass">
+      <button onclick="location.href='change-password.html'"">Change Password</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Online Exam Portal | All Rights Reserved
+  </footer>
+
+  <script>
+    function startExam() {
+      alert("Exam button clicked! (Demo only)");
+    }
+    function changePassword() {
+      alert("Change Password clicked! (Demo only)");
+    }
+  </script>
+</body>
+</html>

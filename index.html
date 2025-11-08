@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <header>
+  <div class="header-container">
+    <div class="logo">
+      <h1>ExamSphere</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="exam.html">Exams</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="login-btn">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    background: #67104d;
+    color: #eee;
+    padding: 15px 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .logo h1 {
+    margin: 0;
+    color: #ff7eb3;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #eee;
+    font-size: 1em;
+    transition: color 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #ff7eb3;
+  }
+
+  .login-btn {
+    padding: 6px 12px;
+    border: 1px solid #ff7eb3;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .login-btn:hover {
+    background: #ff7eb3;
+    color: #111;
+  }
+</style>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #7F00FF, #E100FF);
+      height: 100vh;
+      display: flex;
+      flex-direction: column; /* ✅ Top heading ke liye column */
+      justify-content: flex-start; /* ✅ Upar se start */
+      align-items: center;
+      margin: 0;
+    }
+
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 50px;
+      color: aliceblue;
+      margin: 40px 0; /* ✅ upar aur niche thoda gap */
+      text-align: center;
+      padding: 15px 0px;
+    }
+
+    .container {
+      background: #c878d2;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+    }
+
+    .toggle-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .toggle-buttons button {
+      flex: 1;
+      padding: 10px;
+      margin: 0 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      background: #eee;
+      transition: background 0.3s;
+    }
+    .toggle-buttons button.active {
+      background: #b22c66;
+      color: white;
+    }
+
+    form {
+      display: none;
+    }
+    form.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    .form-group label {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+      display: none;
+    }
+
+    button.login-btn {
+      width: 100%;
+      padding: 10px;
+      background: #3e41d5;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button.login-btn:hover {
+      background: #4fc3c6;
+    }
+
+    .signup-link {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .signup-link a {
+      color: #180689;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+    
+
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Heading moved to top center -->
+  <h1>Welcome to ExamSphere Portal </h1>
+
+  <div class="container">
+    <!-- ✅ Centered Logo -->
+    <div class="logo">
+      <img src="logo2.jpg" alt="Logo">
+    </div>
+
+    <!-- Toggle Buttons -->
+    <div class="toggle-buttons">
+      <button id="studentBtn" class="active">Student</button>
+      <button id="adminBtn">Admin</button>
+    </div>
+
+    <!-- Student Form -->
+    <form id="studentForm" class="active">
+      <div class="form-group">
+        <label for="studentId">Student ID</label>
+        <input type="text" id="studentId">
+        <span class="error" id="studentIdError">Please enter Student ID</span>
+      </div>
+      <div class="form-group">
+        <label for="studentPass">Password</label>
+        <input type="password" id="studentPass">
+        <span class="error" id="studentPassError">Please enter Password</span>
+      </div>
+      <button type="submit" id="studentLoginBtn" class="login-btn">Login</button>
+
+      <!-- ✅ Student Sign Up Link -->
+      <div class="signup-link">
+        Don't have an account? <a href="student-signup.html">Sign Up</a>
+      </div>
+    </form>
+
+    <!-- Admin Form -->
+    <form id="adminForm">
+      <div class="form-group">
+        <label for="adminId">Admin ID</label>
+        <input type="text" id="adminId">
+        <span class="error" id="adminIdError">Please enter Admin ID</span>
+      </div>
+      <div class="form-group">
+        <label for="adminPass">Password</label>
+        <input type="password" id="adminPass">
+        <span class="error" id="adminPassError">Please enter Password</span>
+      </div>
+      <button type="submit" id="adminLoginBtn" class="login-btn">Login</button>
+
+      <!-- ✅ Admin Sign Up Link -->
+      <div class="signup-link">
+        Don't have an account? <a href="admin-signup.html">Sign Up</a>
+      </div>
+    </form>
+  </div>
+  <br/>
+  <br/>
+  <footer>
+    <footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>ExamSphere</h2>
+      <p>Your trusted online exam portal for students and admins.</p>
+    </div>
+
+    <div class="footer-center">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-right">
+      <h3>Contact Us</h3>
+      <p>Email: support@examsphere.com</p>
+      <p>Phone: +91-9876543210</p>
+      <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 ExamSphere | All Rights Reserved | Made with ❤️ by Team ExamSphere
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: #111;
+    color: #eee;
+    padding: 40px 20px 20px 20px;
+    font-family: Arial, sans-serif;
+    width: 100%;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+  }
+
+  .footer-left h2 {
+    color: #ff7eb3;
+    margin-bottom: 10px;
+  }
+
+  .footer-center h3, .footer-right h3 {
+    margin-bottom: 10px;
+    color: #ff7eb3;
+  }
+
+  .footer-center ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-center ul li {
+    margin: 5px 0;
+  }
+
+  .footer-center ul li a {
+    text-decoration: none;
+    color: #eee;
+    transition: 0.3s;
+  }
+
+  .footer-center ul li a:hover {
+    color: #ff7eb3;
+  }
+
+  .social-icons a img {
+    width: 30px;
+    margin: 0 5px;
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+  }
+
+  .social-icons a img:hover {
+    filter: none;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+    font-size: 0.9em;
+    color: #aaa;
+  }
+</style>
+
+    
+  </footer>
+
+  <script>
+    // Toggle logic
+    const studentBtn = document.getElementById("studentBtn");
+    const adminBtn = document.getElementById("adminBtn");
+    const studentForm = document.getElementById("studentForm");
+    const adminForm = document.getElementById("adminForm");
+
+    studentBtn.addEventListener("click", () => {
+      studentBtn.classList.add("active");
+      adminBtn.classList.remove("active");
+      studentForm.classList.add("active");
+      adminForm.classList.remove("active");
+    });
+
+    adminBtn.addEventListener("click", () => {
+      adminBtn.classList.add("active");
+      studentBtn.classList.remove("active");
+      adminForm.classList.add("active");
+      studentForm.classList.remove("active");
+    });
+
+    // Student Login Validation
+    document.getElementById("studentLoginBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = document.getElementById("studentId").value.trim();
+      const pass = document.getElementById("studentPass").value.trim();
+      const idError = document.getElementById("studentIdError");
+      const passError = document.getElementById("studentPassError");
+
+      idError.style.display = "none";
+      passError.style.display = "none";
+
+      if (id === "" && pass === "") {
+        alert("Enter input credentials");
+      } else if (id === "") {
+        idError.style.display = "block";
+      } else if (pass === "") {
+        passError.style.display = "block";
+      } else {
+        window.location.href = "student-home.html";
+      }
+    });
+
+    // Admin Login Validation
+    document.getElementById("adminLoginBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = document.getElementById("adminId").value.trim();
+      const pass = document.getElementById("adminPass").value.trim();
+      const idError = document.getElementById("adminIdError");
+      const passError = document.getElementById("adminPassError");
+
+      idError.style.display = "none";
+      passError.style.display = "none";
+
+      if (id === "" && pass === "") {
+        alert("Enter input credentials");
+      } else if (id === "") {
+        idError.style.display = "block";
+      } else if (pass === "") {
+        passError.style.display = "block";
+      } else {
+        window.location.href = "admin-home.html";
+      }
+    });
+  </script>
+</body>
+</html>
